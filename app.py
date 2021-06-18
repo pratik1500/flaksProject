@@ -9,7 +9,9 @@ memcache = {}
 @app.route("/<name>")
 def hello(name=None):
     return render_template("base.html", name=name, greetings=memcache)
-
+@app.route('/',methods=["POST"])
+def predict():
+    return "This is predict"
 
 @app.route("/greetings", methods=["POST"])
 def greeting():
