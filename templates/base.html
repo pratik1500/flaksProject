@@ -1,241 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poll</title>
-
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Almarai:wght@800&amp;family=Nunito+Sans&amp;display=swap" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="container">
-    <div class="content">
-      <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PNG/DO_Logo_Vertical_White.png"
-        alt="DigitalOcean Logo" width="100" />
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Plant Disease Detection</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Disease Detection</a></li>
+            <!-- <li><a href="typesOfDisease.html">Types of Disease</a></li> -->
+          </ul>
+        </div>
+      </nav>
+        
+      <div class="container">
+        <h3> Plant Disease Detection</h3>
+        <p>Please Upload Your Image</p>
+      </div>
 
-      {% if name %}
-      <h1>Hello {{name}}</h1>
-      {% else %}
-      <h1>Hello there!</h1>
-      {% endif %}
+      <div id="input">
+        <form method=POST enctype=multipart/form-data>
+          <input type=file name=image style="display:inline-block;margin-left:45vw" >
+          <input type=submit value=Predict >
+          <b>
+          <H4 style="margin-left: 45vw;">Disease Predicted is : {{ prediction }}</H4>
+          </b>
+          
+        </form>
+      </div>
+      <br>
+      <br>
+      <br>
 
-      <ul>
-        {% for key, value in greetings.items() %}
-        <li>{{key }} says {{value}} </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
+      <div class="container">
+        <h3> Types of Plants</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Apple</li>
+            <li class="list-group-item">Blueberry</li>
+            <li class="list-group-item">Cherry</li>
+            <li class="list-group-item">Corn</li>
+            <li class="list-group-item">Grape</li>
+            <li class="list-group-item">Orange</li>
+            <li class="list-group-item">Peach</li>
+            <li class="list-group-item">Pepper</li>
+            <li class="list-group-item">Potato</li>
+            <li class="list-group-item">Raspberry</li>
+            <li class="list-group-item">Soyabean</li>
+            <li class="list-group-item">Squash</li>
+            <li class="list-group-item">Strawberry</li>
+            <li class="list-group-item">Tomato</li>
+          </ul>
+      </div>
 
-  <div id="stripes">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+      <div class="container">
+        <h3> Types of Disease</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Apple Scab</li>
+            <li class="list-group-item">Apple Black Rot</li>
+            <li class="list-group-item">Apple healthy</li>
+            <li class="list-group-item">Apple Cedar</li>
+            <li class="list-group-item">Blueberry Healthy</li>
+            <li class="list-group-item">Cherry Healthy</li>
+            <li class="list-group-item">Cherry Powdery Mildew</li>
+            <li class="list-group-item">Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot </li>
+            <li class="list-group-item">Corn_(maize)___Common_rust_</li>
+            <li class="list-group-item">Corn_(maize)___healthy</li>
+            <li class="list-group-item">Corn_(maize)___Northern_Leaf_Blight</li>
+            <li class="list-group-item">Grape___Black_rot</li>
+            <li class="list-group-item">Grape___Esca_(Black_Measles)</li>
+            <li class="list-group-item">Grape___Leaf_blight_(Isariopsis_Leaf_Spot)</li>
+            <li class="list-group-item">Grape___healthy</li>
+            <li class="list-group-item">Grape___Leaf_blight_(Isariopsis_Leaf_Spot)</li>
+            <li class="list-group-item">Orange___Haunglongbing_(Citrus_greening)</li>
+            <li class="list-group-item">Peach___Bacterial_spot</li>
+            <li class="list-group-item">Peach___healthy</li>
+            <li class="list-group-item">Pepper,_bell___Bacterial_spot</li>
+            <li class="list-group-item">Pepper,_bell___healthy</li>
+            <li class="list-group-item">Potato___Early_blight</li>
+            <li class="list-group-item">Potato___healthy</li>
+            <li class="list-group-item">Potato___Late_blight</li>
+            <li class="list-group-item">Raspberry___healthy</li>
+            <li class="list-group-item">Soybean___healthy</li>
+            <li class="list-group-item">Squash___Powdery_mildew</li>
+            <li class="list-group-item">Strawberry___healthy</li>
+            <li class="list-group-item">Strawberry___Leaf_scorch</li>
+            <li class="list-group-item">Tomato___Bacterial_spot</li>
+            <li class="list-group-item">Tomato___Early_blight</li>
+            <li class="list-group-item">Tomato___healthy</li>
+            <li class="list-group-item">Tomato___Late_blight</li>
+            <li class="list-group-item">Tomato___Leaf_Mold</li>
+            <li class="list-group-item">Tomato___Septoria_leaf_spot</li>
+            <li class="list-group-item">Tomato___Spider_mites Two-spotted_spider_mite</li>
+            <li class="list-group-item">Tomato___Target_Spot</li>
+            <li class="list-group-item">Tomato___Tomato_mosaic_virus</li>
+            <li class="list-group-item">Tomato___Tomato_Yellow_Leaf_Curl_Virus</li>
+          </ul>
+      </div>
+      
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
-    body {
-      margin: 0;
-      padding: 50px;
-      min-height: 100vh;
-      position: relative;
-      color: #fff;
-      font-family: "Nunito Sans", sans-serif;
-      font-size: 19px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Almarai", sans-serif;
-    }
-
-    :root {
-      --background: linear-gradient(150deg,
-          #17acff 15%,
-          #016aff 70%,
-          #68a6ff 94%);
-      --first: #53f;
-      --second: #4553ff;
-      --third: #4f40ff;
-      --fourth: #25ddf5;
-      --fifth: #1fa2ff;
-    }
-
-    #stripes {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100vw;
-      display: grid;
-      background: var(--background);
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      transform: skewY(-12deg);
-      transform-origin: 0;
-    }
-
-    #stripes span {
-      /* border: 1px solid #c00c00; */
-    }
-
-    #stripes span:first-child {
-      grid-column: span 1;
-      background: var(--first);
-    }
-
-    #stripes span:nth-child(2) {
-      grid-column: span 2;
-      background: var(--second);
-    }
-
-    #stripes span:nth-child(3) {
-      grid-column: span 2;
-      background: var(--third);
-    }
-
-    #stripes span:nth-child(4) {
-      grid-column: 6;
-      grid-row: 3;
-      background: var(--fourth);
-    }
-
-    #stripes span:nth-child(5) {
-      grid-column: span 2;
-      grid-row: 4;
-      background: var(--fifth);
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 50px 0;
-    }
-
-    .content {
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h1 a {
-      color: #dbf1f5;
-    }
-
-    h1 a:hover {
-      color: #7decff;
-    }
-
-    p {
-      margin-bottom: 50px;
-    }
-
-    code {
-      display: inline-block;
-      padding: 3px 6px;
-      margin-left: 3px;
-      margin-right: 3px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      background: #1a2279;
-      color: #dbf1f5;
-    }
-
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .links a {
-      position: relative;
-      display: block;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 5px;
-      padding: 20px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #222;
-      transition: 0.3s ease all;
-      overflow: hidden;
-    }
-
-    .links a:before,
-    .links a:after {
-      font-size: 40px;
-      display: block;
-      position: absolute;
-    }
-
-    .links a:before {
-      content: "";
-      top: -80%;
-      right: -150px;
-      width: 250px;
-      height: 250px;
-      background: rgba(125, 236, 255, 0.6);
-      pointer-events: none;
-      transform: rotate(-25deg);
-      transition: 0.4s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
-
-    .links a:after {
-      content: "👉";
-      top: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      right: 30px;
-      transform: translateX(80px);
-      transition: 0.3s cubic-bezier(0.34, 0.31, 0, 1.81) transform;
-    }
-
-    .links a:hover {
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
-    }
-
-    .links a:hover:before {
-      transform: rotate(-25deg) translateX(60px);
-    }
-
-    .links a:hover:after {
-      transform: none;
-    }
-
-    .links a strong,
-    .links a span {
-      position: relative;
-      z-index: 1;
-    }
-
-    .links a strong {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .links a span {
-      color: #787878;
-      font-size: 0.9rem;
-    }
-  </style>
+      
 </body>
-
 </html>
